@@ -1,0 +1,18 @@
+
+{% extends 'matchwords/base.html' %}
+
+
+{% block title_block %}Login{% endblock %}
+
+{% block body_block %}
+
+	<h3>Login Your Account</h3>
+
+	<form method="POST">
+		{% csrf_token %}
+		{{ form.as_p }}
+
+		<input type="submit" value="Login">
+	</form>
+
+{% endblock %}

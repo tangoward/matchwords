@@ -1,0 +1,34 @@
+
+{% extends 'matchwords/base.html' %}
+
+{% block title_block %}MatchWords - Find Words In String{% endblock %}
+
+{% block body_block %} 
+
+
+	
+	<form method="POST">
+		{% csrf_token %}
+		<input type="textbox" name="string" placeholder="Enter String">
+
+		<input type="submit" value="Submit">
+	</form>
+
+
+
+
+
+	{% if not found_words %}
+		<h4>No words found. Enter string in the textbox.</h4>
+	{% else %}
+		<h3>Words found in the string.</h3>
+		{% for word in found_words %}
+		<ul>
+			<li>{{ word }}</li>
+		</ul>
+		{% endfor %}
+	{% endif %}
+
+
+
+{% endblock %}

@@ -1,0 +1,20 @@
+
+{% extends 'matchwords/base.html' %}
+
+
+{% block title_block %}Create An Account{% endblock %}
+
+
+{% block body_block %}
+
+	<h3>Create An Account</h3>
+
+	<form method="POST">
+		{% csrf_token %}
+		{{form.as_p}}
+
+		<input type="submit" value="Register">
+		
+	</form>
+
+{% endblock %}
